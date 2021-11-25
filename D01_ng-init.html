@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ajs-event</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -16,10 +25,13 @@
 </head>
 <body>
     <div class="container" ng-app="myAPP">
-        <h2>AJS Event Demo</h2>
+        <h2>AJS Event- Init Demo</h2>
         <hr>
         <div class="row">
-            <div class="col-md-6" ng-controller="myFORM">
+            <div class="col-md-6" ng-controller="myFORM"
+            ng-init="tensp='pho bo'; dongia=60000; soluong=1; thanhtien=''"
+            >
+
                 <form action="" >
                     <div class="form-group">
                         <label for="">input product: </label>
@@ -63,5 +75,7 @@
         } );
 
     </script>
+</body>
+</html>
 </body>
 </html>
