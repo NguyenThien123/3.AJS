@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+</head>
+<body>
+    <div class="container" ng-app>
+    <h2>AngularJS binding data Demo</h2>
+    <hr>
+    <form action="">
+        <div>
+            <label for="">Input product: </label>
+            <input type="text" name="pname" id="pname">
+        </div>
+        <div>
+            <label for="">Input unit price: </label>
+            <input type="text" name="price" id="price" ng-model="price">
+        </div>
+        <div>
+            <label for="">Input quantity: </label>
+            <input type="text" name="qy" id="qy" ng-model="amount">
+        </div>
+        <hr>
+        <p>Total: {{price*amount}}</p>
+    </form>
+</div>
+</body>
+</html>
