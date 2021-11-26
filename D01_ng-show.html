@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ajs-repeat</title>
+    <title>ajs-show</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -14,21 +14,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
 </head>
 <body>
-    <div class="container" ng-app
-         ng-init="ds=['thanh sang','phat tai', 'cam tu', 'anh vu', 'nhat minh','minh anh']; tensv=ds[2];">
-        <h2>AJS Repeat Demo - version 2</h2>
+    <div class="container" ng-app 
+         ng-init="ds=['Saigon', 'Hue', 'Hanoi', 'Thuduc','Cantho','Haiphong', 'Nhatrang','Dalat']" 
+    >
+        <h2>AJS - Show Demo</h2>
         <hr>
-
-        <div>
-            Student List:
-            <select name="" id="" ng-model='tensv'>
-                <option ng-repeat="sv in ds" >{{sv}}</option>
-            </select>
-        </div>
-        <p>
-            Selected student is {{tensv}} 
+        <p>Do you want to show the list of cities ? 
+        <input type="checkbox" name="ckYes" id="ckYes" ng-model="ckYes">
         </p>
-        
+        <ol ng-show="ckYes">
+            <li ng-repeat="tp in ds">{{tp}}</li>
+        </ol>
+
     </div>
 </body>
 </html>
