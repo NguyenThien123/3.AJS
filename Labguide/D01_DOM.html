@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web</title>
+    <style>
+        form div{
+    margin: .5rem;
+}
+        form{
+           margin: 1rem;
+           width: fit-content;
+           padding: 10px;
+        }
+        form label{
+    display: inline-block;
+    }
+    input[type="submit"]{
+    padding: .1rem 3rem;
+    font-weight: bold;
+}
+input[type="reset"], button{
+    padding: .1rem 2rem;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <form action="" id="test1">
+    <div>
+        <h2>Please enter your name</h2>
+        <label for="">Name:</label>
+        <input type="text" name="username" id="username" placeholder="Nhap ten">
+    </div>
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+    <div>
+    <textarea name="test2" id="test2" cols="28" rows="1"> </textarea>
+</div>
+</form>
+</body>
+<script>
+    document.getElementById("test1").onsubmit= function(e){
+e.preventDefault();
+    
+  let username = document.getElementById("username").value;
+  let a=["Hello"];
+  a.push(` ${username}!`);
+  document.getElementById("test2").value = a.join("");
+}
+</script>
+</html>
