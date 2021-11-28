@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- buoc 1. nhung thu vien angularjs tu duong link CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+</head>
+<body>
+   <h2>Diem sinh vien cuoi khoa</h2>
+   <hr>
+   <div class="container" ng-app ng-init="ds=[
+   {Id:'01',name:'Nguyen Van A',Mark:'90'},
+   {Id:'02',name:'Nguyen Van B',Mark:'78'},
+   {Id:'03',name:'Nguyen Van C',Mark:'97'},
+   {Id:'04',name:'Nguyen Van D',Mark:'84'},
+   {Id:'05',name:'Nguyen Van E',Mark:'100'},
+   {Id:'06',name:'Nguyen Van F',Mark:'69'},
+   ];">
+
+   <table class="table table-bordered table-hover table-striped">
+       <thead>
+           <tr>
+               <th>Id</th>
+               <th>Name</th>
+               <th>Mark</th>
+           </tr>
+       </thead>
+       <tbody>
+           <tr ng-repeat="sv in ds">
+               <th>{{sv.Id}}</th>
+               <th>{{sv.name}}</th>
+               <th>{{sv.Mark}}</th>
+           </tr>
+       </tbody>
+   </table>
+
+   </div> 
+</body>
+</html>
