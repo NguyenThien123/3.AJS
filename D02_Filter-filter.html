@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- buoc 1. nhung thu vien angularjs tu duong link CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+</head>
+<body>
+    <div class="container" ng-app="myAPP" ng-controller="myCTR">
+       <h2>Ajs - filter order-by demo</h2>
+       <hr>
+       <div>
+           <h3>Danh sach nhan vien</h3>
+           <hr>
+           <div>
+               Nhap ten nhan vien: 
+               <input type="text" name="ten" id="ten" ng-model="tennv"> <br>
+           </div>
+           <table class="table table-responsive table-striped table-hover">
+               <thead>
+               <tr>
+                   <th>STT</th>
+                   <th>Ma so</th>
+                   <th>Ho ten</th>
+                   <th>Luong co ban</th>
+               </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="nv in ds | filter:tennv">
+                       <td>{{$index}}</td>
+                       <td>{{nv.id}}</td>
+                       <td>{{nv.name}}</td>
+                       <td>{{nv.salary}}</td>
+                </tr>
+            </tbody>
+           </table>
+       </div>
+    <div>
+        
+</div>
+</div>
+</body>
+<script>
+    let app = angular.module("myAPP",[]);
+    app.controller("myCTR", function($scope){
+        $scope.ds=[
+        {'id':'NV01','name':'Nguyen Van A','salary':1000},
+        {'id':'NV02','name':'Nguyen Van B','salary':800},
+        {'id':'NV03','name':'Nguyen Van C','salary':700},
+        {'id':'NV04','name':'Nguyen Van D','salary':1300},
+        {'id':'NV05','name':'Nguyen Van E','salary':400},
+        {'id':'NV06','name':'Nguyen Van F','salary':500}
+    ];
+    });
+</script>
+</html>

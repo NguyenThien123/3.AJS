@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- buoc 1. nhung thu vien angularjs tu duong link CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+</head>
+<body>
+    <div class="container" ng-app="myAPP" ng-controller="myCTR">
+       <h2>Ajs - filter date demo</h2>
+       <hr>
+       <div>
+           <label for="">Enter date</label>
+           <input type="date" name="day" id="day" ng-model="day">
+    </div>
+    <div>
+        default date: {{day|date}} <br>
+        full date: {{day|date:'fullDate'}} <br>
+        long date: {{day|date:'longDate'}} <br>
+        short date: {{day|date:'shortDate'}} <br>
+        day: {{day|date:'dd'}} <br>
+        Month: {{day|date:'MM'}} <br>
+        year: {{day|date:'yyyy'}} <br>
+        time: {{day|date:'shortTime'}} <br>
+        medium time: {{day|date:'mediumTime'}} <br>
+        </div>
+</div>
+</body>
+<script>
+    let app = angular.module("myAPP",[]);
+    app.controller("myCTR", function($scope){
+        $scope.day= new Date();
+    });
+</script>
+</html>

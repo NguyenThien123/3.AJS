@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- buoc 1. nhung thu vien angularjs tu duong link CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.min.js"></script>
+
+
+
+</head>
+<body>
+   <div class="container" ng-app="myAPP">
+       <h2>AngularJS routing Demo</h2>
+       <hr>
+    <nav>
+        <a href="#/!">Home</a>
+        <a href="#!ds">Danh sach nhan vien</a>
+        <a href="#!hinh">hinh anh</a>
+        <a href="#!">Lien he</a>
+    </nav>
+    <hr>
+    <div ng-view class="row"></div> 
+        <footer>
+       COpyright by &copy; 2109.M1, NOV2021
+   </footer>
+</div>
+</body>
+<script>
+    let app = angular.module("myAPP", ["ngRoute"]);
+    app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/", {
+                    
+                })
+                .when("/ds", {
+                    templateUrl: "D01_sinhvien.html"
+                })
+                .when("/hinh", {
+                    templateUrl: "D01_hinh.html"
+                })
+                .when("/lienhe", {
+                    
+                });
+        });
+</script>
+</html>
