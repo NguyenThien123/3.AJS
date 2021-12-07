@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.min.js"> </script>
+</head>
+
+<body ng-app="myApp">
+    <div class="container" ng-controller="mainCTR">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th><a href="#/!">Home</a></th>
+                    <th><a href="#!student">View Information of student</a></th>
+                    <th><a href="#!addstudent">Add New A Student</a></th>
+                </tr>
+            </thead>
+        </table>
+
+        <div ng-view></div>
+
+        
+        
+
+        <script>
+            var app = angular.module("myApp", ["ngRoute"]);
+            app.config(function ($routeProvider) {
+                $routeProvider
+                    .when("/student", {
+                        templateUrl: "name.html"
+                    })
+                    .when("/addstudent", {
+                        templateUrl: "register.html",
+                        controller: "addCTR"
+                    })
+
+            });
+
+
+            app.controller('mainCTR', function ($scope, $http) {
+                $http.get("name.json").then(function (response) {
+                    $scope.sortType = 'Name';
+                    $scope.ds = response.data;
+                    console.log($scope.ds)
+                });
+
+            });
+
+
+            app.controller('addCTR', function ($scope) {
+                $scope.addRow = function () {
+                    $scope.ds.push({ "Name": $scope.Name, "Age": $scope.Age, "Email": $scope.Email });
+
+                    alert("Add new Student successfully!!!");
+                }
+
+            });
+
+        </script>
+
+
+    </div>
+</body>
+
+</html>
